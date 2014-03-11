@@ -1,10 +1,3 @@
-" Auto Commands
-augroup Cpp11Syntax
-    au!
-    au BufNewFile,BufRead *.cpp set syntax=cpp11
-    au BufNewFile,BufRead *.cc set syntax=cpp11
-augroup end
-
 " show typing as command
 set showcmd
 
@@ -19,6 +12,9 @@ set expandtab
 
 " syntax highlighting
 syntax enable
+
+" don't tag {} as error inside ()
+let c_no_curly_error=1
 
 " show line numbers
 set nu
