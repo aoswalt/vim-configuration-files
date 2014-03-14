@@ -26,6 +26,9 @@ highlight LineNr ctermfg=6
 " highlight found when searching
 set hlsearch
 
+" esc to clear search highlighting
+nnoremap <esc> :noh<return><esc>
+
 " status line
 set laststatus=2    " always show status line
 highlight StatusLine cterm=NONE ctermbg=black ctermfg=green
