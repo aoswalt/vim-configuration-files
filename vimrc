@@ -20,7 +20,8 @@ let c_no_curly_error=1
 set nu
 
 " preferred colors (MinGW specific?)
-colorscheme desert
+set t_Co=256
+colorscheme jellybeans
 highlight LineNr ctermfg=6
 
 " highlight found when searching
