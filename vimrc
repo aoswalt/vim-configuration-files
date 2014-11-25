@@ -39,12 +39,15 @@ set cursorline          " highlight cursor line
 
 " preferred colors
 set t_Co=256
+set background=dark
 colorscheme jellybeans
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 "highlight LineNr ctermfg=6
+highlight Statusline cterm=NONE ctermbg=0 ctermfg=15
 
 " status line
 set laststatus=2    " always show status line
-highlight StatusLine cterm=NONE ctermbg=0 ctermfg=6
 set statusline=
 set statusline+=%f  " filename
 set statusline+=%=  " move to right
