@@ -36,6 +36,10 @@ set wildignore=*.swp
 set title               " change terminal's title
 set cursorline          " highlight cursor line
 
+" default font
+if has("gui_running")
+  set guifont=Consolas:h11:cANSI
+endif
 
 " preferred colors
 set t_Co=256
