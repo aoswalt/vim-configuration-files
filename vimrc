@@ -1,5 +1,6 @@
 set showmode            " always show current mode
 set showcmd             " show typing as command
+set autochdir           " set working director to file on open
 
 set backspace=2         " enable standard backspace
 
@@ -36,6 +37,7 @@ set wildignore=*.swp
 set title               " change terminal's title
 set cursorline          " highlight cursor line
 
+
 " default font
 if has("gui_running")
   set guifont=Consolas:h11:cANSI
@@ -65,23 +67,9 @@ let mapleader = ","
 " backslash to clear search highlighting
 nnoremap <leader><space> :noh<return><esc>
 
-" tab controls first, last, prev, next
-"nmap <C-t><up> :tabr<cr> 
-"nmap <C-t><down> :tabl<cr>
-"nmap <C-t><left> :tabp<cr>
-"nmap <C-t><right> :tabn<cr>
-"nnoremap <tab> :tabn<cr>
-"nnoremap <C-i> :tabn<cr>
-"nmap <C-tab> :tabn<cr>
-"nmap <C-S-tab> :tabp<cr>
-
 " fix default regex by inserting \v
 nnoremap / /\v
 vnoremap / /\v
 
 " yank to end of line
 nnoremap Y y$
-
-" tab to matching bracket pairs
-nnoremap <tab> %
-vnoremap <tab> %
