@@ -1,13 +1,18 @@
+runtime scripts/SetupVSCompile.vim
+
 set showmode            " always show current mode
 set showcmd             " show typing as command
 set autochdir           " set working director to file on open
+"set clipboard=unnamedplus   " use system clipboard by default
 
 set backspace=2         " enable standard backspace
 
 set autoindent          " always autoindent
+set smartindent         " adjust brackets, etc. as appropriate
 set tabstop=4           " set tabs to 4 spaces
 set shiftwidth=4        " number of spaces for autoindent
 set expandtab           " expand tabs to spaces by default
+autocmd FileType make setlocal noexpandtab      " do not expand tabs for makefiles
 
 set nu                  " show line numbers
 "set relativenumber      " line number from current
@@ -65,7 +70,9 @@ set statusline+=%L  " total lines preceded by 1 space
 let mapleader = ","
 
 " backslash to clear search highlighting
-nnoremap <leader><space> :noh<return><esc>
+nnoremap <leader><space> :noh<return>
+nnoremap <leader>e :Exp<return>
+nnoremap <leader>m :make<return>
 
 " fix default regex by inserting \v
 nnoremap / /\v
@@ -73,3 +80,9 @@ vnoremap / /\v
 
 " yank to end of line
 nnoremap Y y$
+
+" custom commands
+command Vsc call SetupVSCompile()
+
+" set Visual Studio compilation options
+"autocmd BufRead,BufNewFile */handmade/* call SetupVSCompile()
