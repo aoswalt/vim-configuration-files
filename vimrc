@@ -34,6 +34,7 @@ set history=100         " remember mroe commands and search history
 set undolevels=100      " increased undos
 set nobackup            " do not keep backup files
 set noswapfile          " do not write to swap files
+let netrw_dirhistmax = 0    " do not keep history entries
 
 set wildmenu            " tab completion for files acts like bash
 set wildmode=list:full  " show list when pressing tab
@@ -45,7 +46,7 @@ set cursorline          " highlight cursor line
 
 " default font
 if has("gui_running")
-  set guifont=Consolas:h11:cANSI
+  set guifont=Consolas:h10:cANSI
 endif
 
 " preferred colors
@@ -74,15 +75,19 @@ nnoremap <leader><space> :noh<return>
 nnoremap <leader>e :Exp<return>
 nnoremap <leader>m :make<return>
 
-" fix default regex by inserting \v
+" fix default regex by inserting \v to use metacharacters
 nnoremap / /\v
 vnoremap / /\v
 
 " yank to end of line
 nnoremap Y y$
 
+" insert blacnk lines without going into insert mode
+nnoremap <return> o<ESC>
+nnoremap <S-return> O<ESC>
+
 " custom commands
 command Vsc call SetupVSCompile()
 
 " set Visual Studio compilation options
-"autocmd BufRead,BufNewFile */handmade/* call SetupVSCompile()
+autocmd BufRead,BufNewFile */handmade/* call SetupVSCompile()
